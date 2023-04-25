@@ -150,7 +150,7 @@ def super_heuristic(board: List[List], player: int) -> int:
         score_mobility = 0
 
     # Summing up scores with the appropriate weights to get the final score
-    final_score = (10 * weighted_score) + (10 * score_tiles) + (74.396 * score_front_tiles) + (801.724 * score_corners) + (
-                382.026 * score_corners_closeness) + (78.922 * score_mobility)
+    final_score = (10 * weighted_score) + (10 * score_tiles) + (74.396 * score_front_tiles) + \
+                  (801.724 * score_corners) + (382.026 * score_corners_closeness) + (78.922 * score_mobility)
 
     return round(final_score)

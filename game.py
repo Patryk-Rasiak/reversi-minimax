@@ -7,10 +7,10 @@ from heuristics import piece_score
 
 
 class Game:
-    def __init__(self, heuristic_fn: Callable[[List[List]], int]):
+    def __init__(self, player1, player2, heuristic_fn: Callable[[List[List]], int]):
         self.board = Board()
-        self.current_player = Player(1)
-        self.next_player = Bot(2, 6, heuristic_fn, True)
+        self.current_player = player1
+        self.next_player = player2
         self.heuristic_fn = piece_score
 
     def play(self) -> None:

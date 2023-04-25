@@ -3,6 +3,7 @@ from functions import make_move, get_possible_moves, is_game_over
 
 
 class Player:
+    """Represents a human player in the game"""
     def __init__(self, number: int):
         self.number = number
 
@@ -15,6 +16,7 @@ class Player:
 
 
 class Bot:
+    """Represents an AI-controlled player in the game"""
     def __init__(self, number: int, depth: int, heuristic_fn: Callable[[List[List], int], int], pruning: bool):
         self.pruning = pruning
         self.number = number

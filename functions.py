@@ -25,7 +25,6 @@ def make_move(board: List[List[int]], player: int, move: Tuple[int, int]) -> Lis
 
 def get_possible_moves(board: List[List[int]], current_player: int) -> Set[Tuple[int, int]]:
     possible_moves = []
-
     for i in range(8):
         for j in range(8):
             if board[i][j] == current_player:

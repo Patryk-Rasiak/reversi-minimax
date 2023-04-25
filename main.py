@@ -1,5 +1,6 @@
 from game import Game
-from heuristics import super_heuristic
+from heuristics import super_heuristic, piece_score
+from players import Player, Bot
 
 
 def main():
@@ -27,8 +28,16 @@ def main():
 
     """
 
-    game = Game(super_heuristic)
-    game.play()
+    # Player vs Player game
+    game1 = Game(Player(1), Player(2), piece_score)
+
+    # Player vs Bot game
+    game2 = Game(Player(1), Bot(2, 4, super_heuristic, False), piece_score)
+
+    # Bot vs Bot game
+    game3 = Game(Bot(1, 2, super_heuristic, False), Bot(2, 4, super_heuristic, False), piece_score)
+
+    game3.play()
 
 
 if __name__ == '__main__':
